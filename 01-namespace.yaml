@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: Namespace
+  name: electronic-shop
   labels:
     project: electronic-shop
     environment: dev
