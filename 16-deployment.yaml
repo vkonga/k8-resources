@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: Deployment
+  labels:
+    purpose: deployment-nginx
+    project: electronic-shop
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      purpose: deployment-nginx
+      project: electronic-shop
+      app: nginx
+template:
+  metadata:
+    labels:
+      purpose: deployment-nginx
+      project: electronic-shop
+      app: nginx
+  spec:
+    containers:
+      - name: nginx
+        image: nginx

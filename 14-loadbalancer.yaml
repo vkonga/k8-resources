@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: LoadBalancer
+  labels:
+    purpose: loadbalancer-demo
+spec:
+  type: loadbalancer
+  selector:
+    purpose: loadbalancer-demo
+    project: electronic-shop
+    environment: env
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: loadbalancer-demo
+    project: electronic-shop
+    environment: env
+spec:
+  
+  containers:
+    - name: nginx
+      image: nginx

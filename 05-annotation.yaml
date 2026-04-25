@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations
+  annotations:
+    description: "This pod is me"
+    jenkins: ""
+spec:
+  containers:
+    - name: nginx
+      image: nginx
